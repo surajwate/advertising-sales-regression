@@ -21,6 +21,9 @@ st.markdown(
 # Load the data
 data = pd.read_csv("Advertising.csv", index_col=0)
 
+st.subheader("Summary statistics of the data")
+st.write(data.describe())
+
 # Get columns except "Sales" column, as "Sales" is the target variable
 cols = [col for col in data.columns if col != "Sales"]
 

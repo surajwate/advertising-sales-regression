@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 import joblib
+from sklearn.metrics import mean_squared_error, r2_score
 
 # Load the data
 data = pd.read_csv('Advertising.csv', index_col=0)
@@ -23,6 +24,16 @@ for col in cols:
     # Create a linear regression model
     model = LinearRegression()
     model.fit(X_train, y_train)
+
+    y_pred = model.predict(X_test)
+
+    # Evaluate the model
+    metrics = {
+        'MSE': mean_squared_error(y_test, y_pred),
+        'R2': r2_score(y_test, y_pred)
+    }
+    metrics_df = pd.DataFrame(metrics, index=[0])
+    metrics_df.to_csv(f'models/metrics_simple_linear_regression_{col}.csv', index=False)
 
     # Save the model
     joblib.dump(model, f'models/simple_linear_regression_{col}.pkl')
