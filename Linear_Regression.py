@@ -29,6 +29,8 @@ data = pd.read_csv('Advertising.csv', index_col=0)
 
 st.write(data.head())
 
+st.write(data.describe())
+
 # Additional analysis and plots can be added here
 
 # For example, let's plot the data
