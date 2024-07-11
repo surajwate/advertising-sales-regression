@@ -21,7 +21,7 @@ st.markdown(
     """
 )
 
-st.subheader("Advertising Budget vs Sales Data")
+st.subheader("Advertising Budget and Sales Data")
 
 st.write("The following data is taken from the kaggle [dataset](https://www.kaggle.com/datasets/tawfikelmetwally/advertising-dataset/data).")
 
@@ -29,7 +29,6 @@ data = pd.read_csv('Advertising.csv', index_col=0)
 
 st.write(data.head())
 
-st.write(data.describe())
 
 # Additional analysis and plots can be added here
 
