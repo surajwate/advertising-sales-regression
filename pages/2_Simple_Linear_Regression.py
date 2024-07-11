@@ -17,9 +17,15 @@ st.write(
 
 ad_medium = st.selectbox("Select Advertising Medium", ["TV", "Radio", "Newspaper"])
 
-
 # Load the model
 model = joblib.load(f"models/simple_linear_regression_{ad_medium}.pkl")
+
+# Performance of the model
+st.subheader(f"Performance of the model for {ad_medium} Advertisement")
+metrics = pd.read_csv(f"models/metrics_simple_linear_regression_{ad_medium}.csv")
+st.write(metrics)
+
+st.subheader(f"Predict Sales based on {ad_medium} Advertisement")
 
 # Function to predict sales
 def predict_sales(budget):
