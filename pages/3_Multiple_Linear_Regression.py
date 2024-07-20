@@ -77,7 +77,6 @@ if model is not None and metrics is not None:
 
     if st.button("Predict Sales"):
         # Predict sales
-        user_budget
         sales = predict_sales(model, scaler, user_budget)
         st.write(f"Predicted Sales: {sales:.2f} M$")
 else:
