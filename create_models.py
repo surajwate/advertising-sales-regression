@@ -67,3 +67,4 @@ metrics_df.to_csv('models/metrics_multiple_linear_regression.csv', index=False)
 
 # Save the model
 joblib.dump(model, 'models/multiple_linear_regression.pkl')
+joblib.dump(scaler, 'models/scaler_multiple_linear_regression.pkl')
